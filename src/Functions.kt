@@ -1,8 +1,12 @@
 import kotlin.math.PI
 
+//All functions
+
 fun hello() {
     return println("Hello, world!")
 }
+
+//Return type
 
 fun sum(x: Int, y: Int): Int {
     return x + y
@@ -45,10 +49,14 @@ fun intervalInSeconds(hours: Int = 0, minutes: Int = 0, seconds: Int = 0) = ((ho
 
 fun main() {
 
+    //Invoke all functions
+
     hello()
 // Hello, world!
+
     println(sum(1, 2))
 // 3
+
     println(sum1(1, 2))
 // 3
 

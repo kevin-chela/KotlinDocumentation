@@ -1,6 +1,8 @@
 fun main() {
     //sampleStart
 
+    //map key to value
+
 // Read-only map
     val readOnlyJuiceMenu = mapOf("apple" to 100, "kiwi" to 190, "orange" to 100)
     println(readOnlyJuiceMenu)

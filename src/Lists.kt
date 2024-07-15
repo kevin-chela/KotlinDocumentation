@@ -42,5 +42,16 @@ fun main() {
     val totalCount = greenNumbers.count() + redNumbers.count()
     println(totalCount)
 
+    val items = listOf("apple", "banana", "kiwifruit")
+
+    for (item in items) {
+        println(item)
+    }
+
+    //check presence of elements not case-sensitive
+
+    println("apple" in items)
+
+
 //sampleEnd
 }

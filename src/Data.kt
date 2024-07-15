@@ -1,9 +1,13 @@
 import kotlin.random.Random
+
+//data class
 data class Employee(val name: String, var salary: Int)
+
 class RandomEmployeeGenerator(var minSalary: Int, var maxSalary: Int) {
     val names = listOf("John", "Mary", "Ann", "Paul", "Jack", "Elizabeth")
     fun generateEmployee() = Employee(names.random(), Random.nextInt(from = minSalary, until = maxSalary))
 }
+
 fun main() {
 
 // data classes which are particularly useful for storing data

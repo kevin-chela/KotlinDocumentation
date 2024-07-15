@@ -1,0 +1,163 @@
+1. Visibility Modifiers
+public: Default visibility. Accessible from anywhere.
+
+class PublicExample {
+    public val x = 5  // Public by default
+}
+
+protected: Accessible within the class and its subclasses.
+
+open class ProtectedExample {
+    protected val x = 5
+}
+
+class Derived : ProtectedExample() {
+    fun printX() {
+        println(x)  // Accessible here
+    }
+}
+
+private: Accessible only within the class or file.
+
+class PrivateExample {
+    private val x = 5
+}
+
+internal: Accessible within the same module.
+
+internal class InternalExample {
+    internal val x = 5
+}
+
+2. Multiplatform Modifiers
+
+expect: Declares a platform-agnostic declaration.
+
+expect class PlatformSpecific
+
+actual: Provides platform-specific implementation.
+
+actual class PlatformSpecific {
+    actual fun platformName(): String = "JVM"
+}
+
+3. Class Modifiers
+
+final: Prevents a class or member from being overridden.
+
+final class FinalExample
+
+open: Allows a class or member to be overridden.
+
+open class OpenExample
+
+abstract: Declares a class or member that must be overridden.
+
+abstract class AbstractExample {
+    abstract fun doSomething()
+}
+sealed: Restricts class hierarchies to subclasses defined within the same file.
+
+sealed class SealedExample
+
+const: Declares a compile-time constant.
+
+const val PI = 3.14
+
+4. Function Modifiers
+
+external: Declares a function implemented in native code.
+
+external fun nativeMethod()
+
+override: Indicates a member overrides a member in a superclass.
+
+open class Base {
+    open fun display() {}
+}
+
+class Derived : Base() {
+    override fun display() {}
+}
+
+lateinit: Declares a non-null property that is initialized later.
+
+lateinit var name: String
+
+tailrec: Marks a function for tail recursion optimization.
+
+tailrec fun factorial(n: Int, acc: Int = 1): Int {
+    return if (n <= 1) acc else factorial(n - 1, acc * n)
+}
+
+vararg: Allows a variable number of arguments in a function.
+
+fun printAll(vararg strings: String) {
+    for (str in strings) {
+        println(str)
+    }
+}
+
+suspend: Declares a function that can be suspended and resumed later.
+
+suspend fun fetchData() {
+    // Suspension point
+}
+
+5. Nested Class Modifiers
+
+inner: Declares an inner class with access to the outer class instance.
+
+class Outer {
+    inner class Inner {
+        fun getOuterReference(): Outer = this@Outer
+    }
+}
+
+6. Special Class Modifiers
+
+enum: Declares an enumeration.
+
+enum class Color {
+    RED, GREEN, BLUE
+}
+annotation: Declares an annotation class.
+
+annotation class MyAnnotation
+
+fun: Used to declare a functional interface.
+
+fun interface MyFunction {
+    fun execute()
+}
+
+7. Companion Object Modifier
+companion: Declares a companion object.
+
+class MyClass {
+    companion object {
+        fun create() = MyClass()
+    }
+}
+8. Other Function Modifiers
+inline: Declares an inline function to reduce overhead.
+
+inline fun <reified T> genericFunction() {
+    println(T::class)
+}
+value: Declares a value class.
+
+@JvmInline
+value class Password(val value: String)
+infix: Declares an infix function.
+
+infix fun Int.times(str: String) = str.repeat(this)
+operator: Declares an operator function.
+
+operator fun Int.times(str: String) = str.repeat(this)
+
+9. Data Class Modifier
+
+data: Declares a data class.
+
+data class User(val name: String, val age: Int)

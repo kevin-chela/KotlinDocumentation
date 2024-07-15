@@ -49,6 +49,9 @@ fun main() {
     //sampleStart
     val numbers = listOf(1, -2, 3, -4, 5, -6)
     val positives = numbers.filter { x -> x > 0 }
+    //shorter
+    val positives1 = numbers.filter { it > 0 }
+
     val negatives = numbers.filter { x -> x < 0 }
     println(positives)
 // [1, 3, 5]
@@ -90,5 +93,11 @@ fun main() {
 
     //URL: https://example.com/book-info/5/title
 
+    val fruits = listOf("banana", "avocado", "apple", "kiwifruit")
+    fruits
+        .filter { it.startsWith("a") }
+        .sortedBy { it }
+        .map { it.uppercase() }
+        .forEach { println(it) }
 
 }

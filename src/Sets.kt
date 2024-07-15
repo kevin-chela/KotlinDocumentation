@@ -21,5 +21,13 @@ fun main() {
     val isSupported = requested.uppercase() in SUPPORTED
     println("Support for $requested: $isSupported")
 
+
+    val items = setOf("apple", "banana", "kiwifruit")
+
+    when {
+        "orange" in items -> println("juicy")
+        "apple" in items -> println("apple is fine too")
+    }
+
 //sampleEnd
 }
