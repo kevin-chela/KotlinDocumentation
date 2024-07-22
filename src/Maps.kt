@@ -39,11 +39,42 @@ fun main() {
     println(juiceMenuLocked)
 // {apple=100, kiwi=190, orange=100}
 
+    //Builder function  – buildList(), buildSet(), or buildMap().
+
+    val map = buildMap { // this is MutableMap<String, Int>, types of key and value are inferred from the `put()` calls below
+        put("a", 1)
+        put("b", 0)
+        put("c", 4)
+    }
+    println(map) // {a=1, b=0, c=4}
+
+    //Empty Collections : emptyList(), emptySet(), and emptyMap().
+
+    val empty = emptyMap<String, String>()
+
     //Exercise
 
     val number2word = mapOf(1 to "one", 2 to "two", 3 to "three")
     val n = 2
     println("$n is spelt as '${number2word[n]}'")
+
+    val numbersMap = mapOf("key1" to 1, "key2" to 2, "key3" to 3, "key4" to 1)
+    val anotherMap = mapOf("key2" to 2, "key1" to 1, "key4" to 1, "key3" to 3)
+    println("The maps are equal: ${numbersMap == anotherMap}")
+
+    println("All keys: ${numbersMap.keys}")
+    println("All values: ${numbersMap.values}")
+    if ("key2" in numbersMap) println("Value by key \"key2\": ${numbersMap["key2"]}")
+    if (1 in numbersMap.values) println("The value 1 is in the map")
+    if (numbersMap.containsValue(1)) println("The value 1 is in the map")
+
+    val numbersMap1 = mutableMapOf("one" to 1, "two" to 2)
+
+    mutableMapOf<String, String>().apply { this["one"] = "1"; this["two"] = "2" }
+
+    numbersMap1.put("three", 3)
+    numbersMap1["one"] = 11
+    println(numbersMap1)
 
 //sampleEnd
 }
