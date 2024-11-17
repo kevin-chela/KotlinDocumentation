@@ -1,4 +1,5 @@
 fun main() {
+
 //sampleStart
     var cakesEaten = 0
     var cakesBaked = 0
@@ -14,14 +15,14 @@ fun main() {
         cakesBaked++
     } while (cakesBaked < cakesEaten)
 
-// Eat a cake
-// Eat a cake
-// Eat a cake
-// Bake a cake
-// Bake a cake
-// Bake a cake
+    // Eat a cake
+    // Eat a cake
+    // Eat a cake
+    // Bake a cake
+    // Bake a cake
+    // Bake a cake
 
-    //Exercise
+//Exercise
 
 
 //sampleEnd

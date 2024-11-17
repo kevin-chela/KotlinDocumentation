@@ -24,23 +24,19 @@ fun salaryById(id: Int) = employeeById(id)?.salary ?: 0
 
 fun main() {
 
-    println((1..5).sumOf { id -> salaryById(id) })
+    println((1..5).sumOf { id -> salaryById(id) }) //64
 
     val nullString: String? = null
-    println(describeString(nullString))
-// Empty or null string
+    println(describeString(nullString))  // Empty or null string
 
     val nullString1: String? = null
-    println(lengthString(nullString1))
-// null
+    println(lengthString(nullString1))  // null
 
     //invocation to uppercase
-    println(nullString?.uppercase())
-// null
+    println(nullString?.uppercase())  // null
 
     //Use Elvis Operator ?: provide default value if null detected
-    println(nullString?.length ?: 0)
-// 0
+    println(nullString?.length ?: 0)  // 0
 
 // neverNull has String type
     var neverNull: String = "This can't be null"

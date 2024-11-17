@@ -1,12 +1,10 @@
 //declare class & className
 
-//class is a blueprint of an object
- //open modifier allows class to be inherited
-
+//class is a blueprint of an object|create object class Student -> reg number, grade, course
+//open modifier allows class to be inherited
 open class Shape
 
 //Class inheritance using :
-
 class Rectangle(val height: Double, val length: Double): Shape() {
     val perimeter = (height + length) * 2
 }
@@ -18,7 +16,6 @@ open class Person {
 // override keyword is used to override a member of a superclass in a subclass.
 // This allows the subclass to provide a specific implementation of a function
 // or property that is already defined in its superclass.
-
 class Student : Person() {
     override val name: String = "John"
 }
@@ -35,11 +32,9 @@ class Contact1(val id: Int, var email: String = "example@gmail.com") {
 
 //Create instance using constructor
 //definition constructor a special type of function called to create an object
-
 class Contact2(val id: Int, var email: String)
 
 //Member functions declared within class
-
 class Contact3(val id: Int, var email: String) {
     fun printId() {
         println(id)
@@ -57,11 +52,9 @@ fun main() {
     println(student.name)  // Outputs: John
 
     //contact is an instance of the Contact class.
-
     val contact = Contact2(1, "mary@gmail.com")
 
     //Access properties
-
     // Prints the value of the property: email
     println(contact.email)
     // mary@gmail.com
@@ -72,7 +65,6 @@ fun main() {
     // jane@gmail.com
 
     //concatenate
-
     println("Their email address is: ${contact.email}")
 
     // Calls member function printId()

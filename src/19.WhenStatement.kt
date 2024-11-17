@@ -1,5 +1,4 @@
 //Return on when statement
-
 fun transform(color: String): Int {
     return when (color) {
         "Red" -> 0
@@ -14,7 +13,6 @@ fun transform(color: String): Int {
 fun main(){
 
     //Change string parameter "Red" to "Pink"
-
     val redValue = transform("Red")
     val greenValue = transform("Green")
     val blueValue = transform("Blue")
@@ -24,7 +22,6 @@ fun main(){
     println("Blue: $blueValue")  // Output: Blue: 2
 
     //try catch block expression
-
     try {
         val unknownValue = transform("Yellow")
     } catch (e: IllegalArgumentException) {

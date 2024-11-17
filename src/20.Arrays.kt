@@ -1,4 +1,5 @@
 fun main() {
+
 //sampleStart
 // Creates an array with values [1, 2, 3]
     val simpleArray = arrayOf(1, 2, 3)
@@ -13,7 +14,7 @@ fun main() {
     // Converts to a Set
     println(simpleArray.toSet())
 
-// Converts to a List
+   // Converts to a List
     println(simpleArray.toList())
 
     //Array deque allows you to add and remove element at the start and end of queue

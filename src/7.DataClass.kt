@@ -1,6 +1,6 @@
 import kotlin.random.Random
 
-//data class
+//data class used for data storage
 data class Persona(var name: String, var age: Int)
 
 data class Employee(val name: String, var salary: Int)
@@ -11,8 +11,6 @@ class RandomEmployeeGenerator(var minSalary: Int, var maxSalary: Int) {
 }
 
 fun main() {
-
-// data classes which are particularly useful for storing data
 
     val empGen = RandomEmployeeGenerator(10, 30)
     println(empGen.generateEmployee())
