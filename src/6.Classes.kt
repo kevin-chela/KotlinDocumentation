@@ -34,13 +34,34 @@ class Contact1(val id: Int, var email: String = "example@gmail.com") {
 //definition constructor a special type of function called to create an object
 class Contact2(val id: Int, var email: String)
 
-//Member functions declared within class
+//Member functions must be declared within class
 class Contact3(val id: Int, var email: String) {
     fun printId() {
         println(id)
     }
 }
 
+//Declaring properties
+class Address {
+    var name: String = "Holmes, Sherlock"
+    var street: String = "Baker"
+    var city: String = "London"
+    var state: String? = null
+    var zip: String = "123456"
+}
+
+fun copyAddress(address: Address): Address {
+    val result = Address() // there's no 'new' keyword in Kotlin
+    result.name = address.name // accessors are called
+    result.street = address.street
+
+    return result
+}
+
+class User(val map: Map<String, Any?>) {
+    val name: String by map
+    val age: Int by map
+}
 
 fun main() {
 

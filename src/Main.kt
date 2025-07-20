@@ -3,6 +3,11 @@
 
 //Entry point kotlin application
 
+//fun main(args: Array<String>) {
+//    println(args.contentToString())
+//}
+
+
 fun main() {
 
     val name = "Kotlin"

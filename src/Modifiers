@@ -82,6 +82,17 @@ class Derived : Base() {
 
 lateinit: Declares a non-null property that is initialized later.
 
+public class MyTest {
+lateinit var subject: TestSubject
+@SetUp fun setup() {
+subject = TestSubject()
+}
+@Test fun test() {
+subject.method() // dereference directly
+}
+}
+
+
 lateinit var name: String
 
 tailrec: Marks a function for tail recursion optimization.
@@ -116,7 +127,7 @@ class Outer {
 
 6. Special Class Modifiers
 
-enum: Declares an enumeration.
+enum: Declares an enumeration. Limits you to a particular set of values
 
 enum class Color {
     RED, GREEN, BLUE
@@ -161,3 +172,101 @@ operator fun Int.times(str: String) = str.repeat(this)
 data: Declares a data class.
 
 data class User(val name: String, val age: Int)
+
+Asynchronous programming techniques
+
+Threading - Threading involves using threads to execute tasks simultaneously or asynchronously.
+
+fun main() {
+    val thread1 = Thread {
+        Thread.sleep(2000)
+        println("Task 1 complete")
+    }
+    val thread2 = Thread {
+        Thread.sleep(1000)
+        println("Task 2 complete")
+    }
+
+    thread1.start()
+    thread2.start()
+
+    thread1.join()
+    thread2.join()
+    println("All tasks complete")
+}
+
+Callbacks -  constructs like lambdas to implement callbacks.
+
+fun fetchData(callback: () -> Unit) {
+    Thread {
+        Thread.sleep(2000)
+        println("Data fetched")
+        callback()
+    }.start()
+}
+
+fun processData() {
+    println("Processing data")
+}
+
+fun main() {
+    fetchData(::processData)
+}
+
+Futures, promises, and others - Kotlin supports futures through libraries like CompletableFuture or kotlinx.coroutines.
+
+import java.util.concurrent.CompletableFuture
+
+fun slowTask(): String {
+    Thread.sleep(2000)
+    return "Task complete"
+}
+
+fun main() {
+    val future = CompletableFuture.supplyAsync { slowTask() }
+    println("Doing something else...")
+    println(future.get()) // Blocks until the result is available
+}
+
+Reactive Extensions
+
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.schedulers.Schedulers
+import java.util.concurrent.TimeUnit
+
+fun main() {
+    Observable.just("Task complete")
+        .delay(2, TimeUnit.SECONDS)
+        .subscribeOn(Schedulers.io())
+        .subscribe { println(it) }
+
+    println("Doing something else...")
+    Thread.sleep(3000) // Ensure the main thread waits for observable
+}
+
+Coroutines
+
+import kotlinx.coroutines.*
+
+suspend fun task1() {
+    delay(2000)
+    println("Task 1 complete")
+}
+
+suspend fun task2() {
+    delay(1000)
+    println("Task 2 complete")
+}
+
+fun main() = runBlocking {
+    val job1 = launch { task1() }
+    val job2 = launch { task2() }
+
+    job1.join()
+    job2.join()
+    println("All tasks complete")
+}
+
+Interface
+
+

@@ -2,6 +2,7 @@
 import kotlin.math.PI
 
 //All functions
+//A function is a set of instructions that performs a specific task
 
 //Normal function with return statement
 fun hello() {
@@ -13,8 +14,15 @@ fun sum(x: Int, y: Int): Int {
     return x + y
 }
 
+fun double(x: Int): Int {
+    return 2 * x
+}
+
 //Single-expression
 fun add(x: Int, y: Int) = x + y
+
+//Lambda expression
+val sum: (Int, Int) -> Int = { x: Int, y: Int -> x + y }
 
 //Named Arguments|Parameters
 fun printMessageWithPrefix(message: String, prefix: String) {
@@ -69,3 +77,5 @@ fun main() {
     println(circleArea(2)) // 12.566370614359172
 
 }
+
+//A higher-order function is a function that takes functions as parameters, or returns a function.

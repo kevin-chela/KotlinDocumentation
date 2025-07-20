@@ -8,7 +8,11 @@ fun main() {
 
 
     // Read-only set
-    val readOnlyFruit = setOf("apple", "banana", "cherry", "cherry")
+    val readOnlyFruit = setOf<String>("berry", "banana", "cherry", "cherry")
+
+    //notice only prints out unique words not repetitive
+
+    println(readOnlyFruit);
 
     //similar keywords as used in file lists.kt apply .count, .first
 
